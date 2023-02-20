@@ -1,8 +1,130 @@
+/* GENERAL */
+
 * {
     box-sizing: border-box;
 }
 
-body {
-    font-family: font-family: 'Arimo', sans-serif;
+header {
+    background-color: #64cd8f;
 }
 
+section {
+    margin: 0 auto;
+    padding-left: 5%;
+    padding-right: 5%; /* main container width set by the % */
+    /* min-height: 100vh; */
+    /* overflow: auto;  */
+    /* section adjusts to content's height */
+  }
+
+section:first-child {
+    padding-top: 10%;
+}
+section:nth-child(2) {
+    padding-top: 5%;
+}
+
+/* FONTS */
+
+body {
+    font-family: 'Manrope', sans-serif;
+}
+
+nav li p{
+    font-family: 'Libre Baskerville', serif;
+    font-size: 3em;
+}
+
+h2 {
+    font-size: 2em;
+    font-weight: 500;
+    
+}
+
+h1 {
+    font-size: 4em;
+    background-color: black;
+
+
+}
+
+h1, h2 {
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    color: white;
+    padding: 20px;
+}
+
+.highlight {
+    background-color: black;
+    /* padding: 10px; */
+    padding: 20px;
+}  
+
+h3 {
+    color: #64cd8f;
+    font-weight: 300;
+}
+
+h4 {
+    background-color: black;
+    color: white;
+    border-radius: 30px;
+    text-align: center;
+    padding: 20px;
+}
+
+/* NAVBAR */
+
+.nav-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 30px;
+    /* gap: 60px; */
+    height: 150px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .nav-container li {
+    margin: auto; 
+    list-style: none;
+  }
+
+  .nav-container li:first-child {
+    flex-grow: 2;
+  }
+
+  .nav-container a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .nav-container a:hover {
+    text-decoration: underline;
+  }
+
+  /* CARDS */
+
+  .card-container {
+    display: grid;
+    gap: 50px;
+    grid-template-columns: auto auto;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  .card img {
+    width: 150px;
+    border-radius: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
+    /* width: 60%; */
+  margin: auto;
+  display: block; /* block is neccessary to center image with margin:auto */
+  }
+
+  .card {
+    border: 3px solid black;
+    padding: 50px;
+  }
