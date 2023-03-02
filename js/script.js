@@ -5,6 +5,8 @@ let movieData = {
       runtime: 151,
       rating: 7.2,
       year: 2007,
+      image: 'images/darjeeling.jpeg',
+
     },
     "The Royal Tenenbaums": {
       plot: "The eccentric members of a dysfunctional family reluctantly gather under the same roof for various reasons",
@@ -12,6 +14,8 @@ let movieData = {
       year: 2001,
       cast: ["Gene Hackman", "Gwnyeth Paltrow", "Anjelica Huston"],
       runtime: 170,
+      image: 'images/royal.jpeg',
+
     },
     "Fantastic Mr. Fox": {
       year: 2009,
@@ -24,6 +28,8 @@ let movieData = {
       ],
       runtime: 147,
       rating: 7.9,
+      image: 'images/fox.jpeg',
+
     },
     "The Grand Budapest Hotel": {
       rating: 8.1,
@@ -31,6 +37,7 @@ let movieData = {
       year: 2014,
       plot: "A writer encounters the owner of an aging high-class hotel, who tells him of his early years serving as a lobby boy in the hotel's glorious years under an exceptional concierge.",
       cast: ["Ralph Fiennes", "F. Murray Abraham", "Mathieu Amalric"],
+      image: 'images/budapest.jpeg',
     },
   };
  
@@ -43,26 +50,182 @@ for (let i = 0; i < Object.keys(movieData).length; i++) {
   let title = Object.keys(movieData)[i]; // Keys lets you access the the actual title. So it goes object > keys > values.
   html +=
     `<div class="card">
-    <!-- THIS WILL BE REPLACED WITH JAVASCRIPT -->
-    <img src="images/filler.jpg" alt="#">
-    <h4>${title}</h4>
-    <p>${card.rating}/10</p>
-    <p>
+      <img src="${card.image}" alt="Film Still">
+      <h4>${title}</h4>
+      <p class="card_rating_text">${card.rating}/10</p>
+      <p class="card_summary_text">
       Summary: ${card.plot}
-    </p>
-    <p>Starring: ${card.cast.join(', ')}.</p> 
-      <!-- 
-        Use .join to add the comma and space. Also: I found this code but don't 
-        understand it yet, when added it will replace 
-        last comma with ', and' =
-         ...join(', '))}.replace(/, ([^,]*)$/, ' and $1') 
-        Come back and pick this apart if time.
-        -->
-    <p>First aired: ${card.year}.</p>
-    <p>Runtime: ${card.runtime} minutes.</p>
-  </div>
+      </p>
+      <p class="card_starring_text">Starring: ${card.cast.join(', ')}.</p> 
+        <!-- 
+          Use .join to add the comma and space. Also: I found this code but don't 
+          understand it yet, when added it will replace 
+          last comma with ', and' =
+          ...join(', '))}.replace(/, ([^,]*)$/, ' and $1') 
+          Come back and pick this apart if time.
+          -->
+      <p class="card_year_text">First aired: ${card.year}</p>
+      <p class="card_runtime_text">Runtime: ${card.runtime} minutes</p>
+    </div>
     `
     ;  
 }
 
-document.querySelector('.card-container').insertAdjacentHTML('beforeend', html); 
+document.querySelector('.card-container').insertAdjacentHTML('afterbegin', html); 
+
+// 2. ADDS AN ACCURATE DATE
+
+const date = new Date();
+
+let day = date.getDate();
+let month = date.getMonth() + 1; // You need + 1 as month is seen as 0-11.
+let year = date.getFullYear();
+let headingDate = `${day} / ${month} / ${year}`;
+
+
+// This adds a 0 prefix if day/month is a single digit - Aesthetic Only
+if ( day <= 9 & month >= 10) {
+    headingDate = `0${day} / ${month} / ${year}`;
+}  else if ( day >= 10 & month <= 9 ) {
+    headingDate = `${day} / 0${month} / ${year}`;
+}  else if ( day <= 9 & month <= 9) {
+    headingDate = `0${day} / 0${month} / ${year}`;
+}  
+
+document.getElementById("clock").innerHTML = headingDate.toLocaleString();
+
+
+// 3. TOGGLES DISPLAYED INFO USING CHECKBOXES
+
+function toggleRating(obj) {
+
+  if(obj.checked) {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+    document.querySelectorAll('.card_rating_text')[i].style.display = "block";
+    }
+  }
+  else {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+      document.querySelectorAll('.card_rating_text')[i].style.display = "none";
+      }
+  }
+}
+
+function toggleSummary(obj) {
+
+  if(obj.checked) {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+    document.querySelectorAll('.card_summary_text')[i].style.display = "block";
+    }
+  }
+  else {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+      document.querySelectorAll('.card_summary_text')[i].style.display = "none";
+      }
+  }
+}
+
+function toggleStarring(obj) {
+
+  if(obj.checked) {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+    document.querySelectorAll('.card_starring_text')[i].style.display = "block";
+    }
+  }
+  else {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+      document.querySelectorAll('.card_starring_text')[i].style.display = "none";
+      }
+  }
+}
+
+function toggleAired(obj) {
+
+  if(obj.checked) {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+    document.querySelectorAll('.card_year_text')[i].style.display = "block";
+    }
+  }
+  else {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+      document.querySelectorAll('.card_year_text')[i].style.display = "none";
+      }
+  }
+}
+
+function toggleRuntime(obj) {
+
+  if(obj.checked) {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+    document.querySelectorAll('.card_runtime_text')[i].style.display = "block";
+    }
+  }
+  else {
+    for (let i = 0; i < Object.keys(movieData).length; i++) {
+      document.querySelectorAll('.card_runtime_text')[i].style.display = "none";
+      }
+  }
+}
+
+// 4. CREATES A SUBMITTABLE FORM
+
+let submitForm = document.getElementById('submit_form');
+
+submitForm.addEventListener('submit', (e) => {
+  e.preventDefault(); // Stops form from submitting before checking for blank values
+  let userTitle = document.getElementById('form_title');
+  let userRating = document.getElementById('form_rating');
+  let userSummary = document.getElementById('form_summary');
+  let userStarring = document.getElementById('form_starring');
+  let userAirdate = document.getElementById('form_airdate');
+  let userRuntime = document.getElementById('form_runtime');
+
+  if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' || userStarring.value == '' || userAirdate.value == '' || userRuntime.value == '' ) {
+    alert("Make sure you've filled in all the fields"); // Checks for empty fields
+  } else {
+// This creates an extra card with the user values:
+      let extraCard = '';
+      extraCard +=
+        `<div class="card">
+          <h4>${userTitle.value}</h4>
+          <p class="card_rating_text">${userRating.value}/10</p>
+          <p class="card_summary_text">
+          Summary: ${userSummary.value}
+          </p>
+          <p class="card_starring_text">Starring: ${userStarring.value}.</p> 
+            <!-- 
+              Use .join to add the comma and space. Also: I found this code but don't 
+              understand it yet, when added it will replace 
+              last comma with ', and' =
+              ...join(', '))}.replace(/, ([^,]*)$/, ' and $1') 
+              Come back and pick this apart if time.
+              -->
+          <p class="card_year_text">First aired: ${userAirdate.value}</p>
+          <p class="card_runtime_text">Runtime: ${userRuntime.value} minutes</p>
+        </div>
+        `
+      ;  
+    document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraCard); // Adds to the end 
+    alert('Success!');
+
+  }
+})
+
+    // Code to revisit in case you think that appending might be better: 
+    // let userMovie = { 
+    //    rating: userRating.value,
+    //       runtime: userRuntime.value,
+    //       year: userAirdate.value,
+    //       plot: userSummary.value,
+    //       cast: userStarring.value
+        
+    // }
+    // console.log(userMovie);
+
+    // movieData.userTitle = userMovie;
+    // console.log(movieData);
+
+    // alert("Your film has been added! Thankyou."); 
+    // console.log(`${userTitle.value}, ${userRating.value}, ${userSummary.value}, ${userStarring.value}, ${userAirdate.value}, ${userRuntime.value}`);
+  // }
+

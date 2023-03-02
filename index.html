@@ -24,18 +24,64 @@
     <main>
 
       <section>
-        
-          <h2><span class="highlight">Home > Film/Television > Reviews</span></h2>
-          <h1>This Week's Films Under the Spotlight</h1>
+        <h2><span class="highlight">Home > Film/Television > Reviews</span></h2>
+        <h1>This Week's Films Under the Spotlight</h1>
         <h3>Author: Isobel Butler</h3>
-        <h3>Published: Current Date</h3>
+        <h3>Published: <span id="clock">Current Date</span></h3>
       </section>
 
       <section>
-        <p>Filters:  Rating [ x ]   Summary [ x ]    Starring [ x ]    Airdate [ x ]    Runtime [ x ]</p>
-        <div class="card-container">
-          
+  
+        <form class="filters">
+          <label>Toggle displayed info:</label>
+          <input type="checkbox" id="check_rating" name="check_rating" checked onclick="toggleRating(this)">
+          <label for="check_rating">Rating</label>
 
+          <input type="checkbox" id="check_summary" name="check_summary" checked onclick="toggleSummary(this)">
+          <label for="check_summary">Summary</label>
+
+          <input type="checkbox" id="check_starring" name="check_starring" checked onclick="toggleStarring(this)">
+          <label for="check_starring">Starring</label>
+
+          <input type="checkbox" id="check_airdate" name="check_airdate" checked onclick="toggleAired(this)">
+          <label for="check_airdate">Airdate</label>
+
+          <input type="checkbox" id="check_runtime" name="check_runtime" checked onclick="toggleRuntime(this)">
+          <label for="check_runtime">Runtime</label>
+
+        </form>
+       
+        <div class="card-container">
+          <!-- JAVASCRIPT GENERATES CARDS HERE  -->
+          <div class="card_form" id="card_user">
+            <form action="" method="" id="submit_form">
+              <!-- <fieldset> -->
+                <legend>Want to have your say?</legend>
+                  <label for="form_title">Film title:</label>
+                  <input type="text" id="form_title" name="form_title">
+
+                  <label for="form_title">Rating:</label>
+                  <input type="number" id="form_rating" name="form_rating" min="1" max="10" placeholder="10/10" step="0.1">
+
+                  <label for="form_summary">Summary:</label>  
+                  <textarea id="form_summary" name="user_summary"></textarea>
+
+                  <label for="form_starring">Starring:</label>
+                  <input type="text" id="form_starring" name="form_starring" placeholder="Actor Name">
+                  <input type="text" id="form_starring" name="form_starring" placeholder="Actor Name">
+                  <input type="text" id="form_starring" name="form_starring" placeholder="Actor Name">
+
+                  <label for="form_airdate">Year aired:</label>
+                  <input type="number" id="form_airdate" name="form_airdate" min="1900" max="2030" step="1"/>
+
+                  <label for="form_runtime">Runtime (minutes):</label>
+                  <input type="number" id="form_runtime" name="form_runtime" min="1" max="400" step="1"/>
+              <!-- </fieldset> -->
+                <button type="submit">Submit Film</button>
+             
+             
+            </form>
+          </div>
         </div>
 
       </section>
