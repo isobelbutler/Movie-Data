@@ -117,7 +117,7 @@ h4 {
     padding-bottom: 5%;
   }
 
-  .card-container {
+  .card-container, .form-container {
     display: grid;
     gap: 50px;
     grid-template-columns: auto auto;
@@ -135,7 +135,7 @@ h4 {
     display: block; /* block is neccessary to center image with margin:auto */
   }
 
-  .card, .card_form {
+  .card {
     border: 3px solid black;
     padding: 50px;
     background-color: #F1EEEE;
