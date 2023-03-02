@@ -194,72 +194,34 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
       plot: userSummary.value,
       cast: userStarring.value 
  }
- console.log(userMovie);
+  console.log(userMovie);
 
 // Users Movie gets added to the movieData object
- movieData[userTitle.value] = userMovie; //Breakthrough!! using [] means you can access the .value rather than using dot notation
- console.log(movieData);
+  movieData[userTitle.value] = userMovie; //Breakthrough!! using [] means you can access the .value rather than using dot notation
+  console.log(movieData);
 
-// We access the last entry in the object (the users one)
+// We access the last entry in the object (the users one) and add this to the HTML
 
-//  let lastUserTitle = Object.keys(movieData).pop(); // accesses last added film title
-//  let lastUserInfo = Object.values(movieData).pop(); // accesses the info of the last film title
-
-//  console.log(lastUserTitle, lastUserInfo);
-
-// We add this to the HTML
-
-userCard = Object.keys(movieData).pop(); // BREAKTHROUGH!!!! - Values lets you access the data of each title.
-userInfo = Object.values(movieData).pop(); // Keys lets you access the the actual title. So it goes object > keys > values.
-extraHtml +=
-  `<div class="card">
-    <h4>${userCard}</h4>
-    <p class="card_rating_text">${userInfo.rating}/10</p>
-    <p class="card_summary_text">
-    Summary: ${userInfo.plot}
-    </p>
-    <p class="card_starring_text">Starring: ${userInfo.cast}.</p> 
-    <p class="card_year_text">First aired: ${userInfo.year}</p>
-    <p class="card_runtime_text">Runtime: ${userInfo.runtime} minutes</p>
-  </div>
-  `
-  ;  
+  userCard = Object.keys(movieData).pop(); // THE TITLE
+  userInfo = Object.values(movieData).pop(); // THE DATA
+  extraHtml =
+    `<div class="card">
+      <h4>${Object.keys(movieData).pop()}</h4>
+      <p class="card_rating_text">${userInfo.rating}/10</p>
+      <p class="card_summary_text">
+      Summary: ${userInfo.plot}
+      </p>
+      <p class="card_starring_text">Starring: ${userInfo.cast}.</p> 
+      <p class="card_year_text">First aired: ${userInfo.year}</p>
+      <p class="card_runtime_text">Runtime: ${userInfo.runtime} minutes</p>
+    </div>
+    `
+    ;  
+    console.log(movieData.length);
+}
+  
   document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraHtml); 
 
-}
-
- alert("Your film has been added! Thankyou."); 
-
-//  document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraCard);
+  alert("Your film has been added! Thankyou."); 
 
 })
-
-  // Code to revisit in case you think that appending might be better: 
-
-
-
-
-//   // This creates an extra card with the user values:
-//   let extraCard = '';
-//   extraCard +=
-//     `<div class="card">
-//       <h4>${userTitle.value}</h4>
-//       <p class="card_rating_text">${userRating.value}/10</p>
-//       <p class="card_summary_text">
-//       Summary: ${userSummary.value}
-//       </p>
-//       <p class="card_starring_text">Starring: ${userStarring.value}.</p> 
-//         <!-- 
-//           Use .join to add the comma and space. Also: I found this code but don't 
-//           understand it yet, when added it will replace 
-//           last comma with ', and' =
-//           ...join(', '))}.replace(/, ([^,]*)$/, ' and $1') 
-//           Come back and pick this apart if time.
-//           -->
-//       <p class="card_year_text">First aired: ${userAirdate.value}</p>
-//       <p class="card_runtime_text">Runtime: ${userRuntime.value} minutes</p>
-//     </div>
-//     `
-//   ;  
-// document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraCard); // Adds to the end 
-// alert('Success!');
