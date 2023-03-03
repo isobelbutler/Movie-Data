@@ -188,16 +188,18 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
   alert("Make sure you've filled in all the fields"); // Checks for empty fields
 } else {
 
+  // Splits the starring string into an array by looking for a comma and space
   userStarring = userStarring.value;
-  const starringArray = userStarring.split(", "); // splits the starring data into an array by info seperated by a comma and space
+  const starringArray = userStarring.split(", "); // 
 
+  // Stores user data as object
   let userMovie = {    
       rating: userRating.value,
       runtime: userRuntime.value,
       year: userAirdate.value,
       plot: userSummary.value,
       cast: starringArray,
-      image: userImage.value 
+      // image: userImage.src 
  }
   console.log(userMovie);
 
@@ -211,7 +213,7 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
   userInfo = Object.values(movieData).pop(); // THE DATA
   extraHtml =
     `<div class="card">
-       <img src="${userInfo.image}" alt="Film Still">
+       <img src="images/userimage.jpeg" alt="Film Still">
       <h4>${userCard}</h4>
       <p class="card_rating_text">${userInfo.rating}/10</p>
       <p class="card_summary_text">
