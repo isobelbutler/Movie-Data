@@ -67,15 +67,17 @@
                   <textarea id="form_summary" name="user_summary"></textarea>
 
                   <label for="form_starring">Starring:</label>
-                  <input type="text" id="form_starring" name="form_starring" placeholder="Actor Name">
-                  <input type="text" id="form_starring" name="form_starring" placeholder="Actor Name">
-                  <input type="text" id="form_starring" name="form_starring" placeholder="Actor Name">
+                  <p><i>Note: Seperate each actor with a comma then a space.</i></p>
+                  <input type="text" id="form_starring" name="form_starring" placeholder="E.g. Morgan Freeman, Angelina Jolie">
 
                   <label for="form_airdate">Year aired:</label>
                   <input type="number" id="form_airdate" name="form_airdate" min="1900" max="2030" step="1"/>
 
                   <label for="form_runtime">Runtime (minutes):</label>
                   <input type="number" id="form_runtime" name="form_runtime" min="1" max="400" step="1"/>
+
+                  <label for="form_image">Upload an image:</label>
+                  <input type="file" id="form_image" name="form_image" accept="image/*" >
               <!-- </fieldset> -->
                 <button type="submit">Submit Film</button>
              

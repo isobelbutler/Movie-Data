@@ -182,17 +182,22 @@ let userSummary = document.getElementById('form_summary');
 let userStarring = document.getElementById('form_starring');
 let userAirdate = document.getElementById('form_airdate');
 let userRuntime = document.getElementById('form_runtime');
-
+let userImage = document.getElementById('form_image');
 
 if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' || userStarring.value == '' || userAirdate.value == '' || userRuntime.value == '' ) {
   alert("Make sure you've filled in all the fields"); // Checks for empty fields
 } else {
+
+  userStarring = userStarring.value;
+  const starringArray = userStarring.split(", "); // splits the starring data into an array by info seperated by a comma and space
+
   let userMovie = {    
       rating: userRating.value,
       runtime: userRuntime.value,
       year: userAirdate.value,
       plot: userSummary.value,
-      cast: userStarring.value 
+      cast: starringArray,
+      image: userImage.value 
  }
   console.log(userMovie);
 
@@ -206,12 +211,13 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
   userInfo = Object.values(movieData).pop(); // THE DATA
   extraHtml =
     `<div class="card">
-      <h4>${Object.keys(movieData).pop()}</h4>
+       <img src="${userInfo.image}" alt="Film Still">
+      <h4>${userCard}</h4>
       <p class="card_rating_text">${userInfo.rating}/10</p>
       <p class="card_summary_text">
       Summary: ${userInfo.plot}
       </p>
-      <p class="card_starring_text">Starring: ${userInfo.cast}.</p> 
+      <p class="card_starring_text">Starring: ${userInfo.cast.join(', ')}.</p> 
       <p class="card_year_text">First aired: ${userInfo.year}</p>
       <p class="card_runtime_text">Runtime: ${userInfo.runtime} minutes</p>
     </div>
@@ -222,6 +228,5 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
   
   document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraHtml); 
 
-  alert("Your film has been added! Thankyou."); 
 
 })
