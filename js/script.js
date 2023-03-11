@@ -172,6 +172,7 @@ let submitForm = document.getElementById('submit_form');
 let extraHtml = '';
 let userCard = '';
 let userInfo = '';
+let cardContainer = document.getElementById('card-container');
 
 // User adds their own film which gets checked for empty fields before submitting
 submitForm.addEventListener('submit', (e) => {
@@ -182,7 +183,7 @@ let userSummary = document.getElementById('form_summary');
 let userStarring = document.getElementById('form_starring');
 let userAirdate = document.getElementById('form_airdate');
 let userRuntime = document.getElementById('form_runtime');
-let userImage = document.getElementById('form_image');
+// let userImage = document.getElementById('form_image');
 
 if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' || userStarring.value == '' || userAirdate.value == '' || userRuntime.value == '' ) {
   alert("Make sure you've filled in all the fields"); // Checks for empty fields
@@ -227,8 +228,11 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
     ;  
     console.log(movieData.length);
 }
-  
-  document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraHtml); 
+
+const container = document.querySelector('.card-container');
+
+document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraHtml); 
+// container.insertBefore(container.lastChild, extraHtml); 
 
 
 })
