@@ -54,9 +54,9 @@ for (let i = 0; i < Object.keys(movieData).length; i++) {
         <h4>${title}</h4>
         <p class="card_rating_text">${card.rating}/10</p>
         <p class="card_summary_text">
-        Summary: ${card.plot}
+        Summary:<br> ${card.plot}
         </p>
-        <p class="card_starring_text">Starring: ${card.cast.join(', ')}.</p> 
+        <p class="card_starring_text">Starring:<br> ${card.cast.join(', ')}.</p> 
           <!-- 
             Use .join to add the comma and space. Also: I found this code but don't 
             understand it yet, when added it will replace 
@@ -71,7 +71,7 @@ for (let i = 0; i < Object.keys(movieData).length; i++) {
       ;  
 }
 
-document.querySelector('.card-container').insertAdjacentHTML('afterbegin', html); 
+document.querySelector('.card-container').insertAdjacentHTML('beforeend', html); 
 
 // 2. ADDS AN ACCURATE DATE
 
@@ -231,7 +231,7 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
 
 const container = document.querySelector('.card-container');
 
-document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraHtml); 
+document.querySelector('.card-container').insertAdjacentHTML('afterbegin', extraHtml); 
 // container.insertBefore(container.lastChild, extraHtml); 
 
 

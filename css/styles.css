@@ -2,6 +2,7 @@
 
 * {
     box-sizing: border-box;
+    line-height: normal;
 }
 
 header {
@@ -76,6 +77,10 @@ h4 {
   color: #64cd8f;
 }
 
+#submit_form p {
+  font-size: 14px;
+}
+
 /* NAVBAR */
 
 .nav-container {
@@ -109,16 +114,15 @@ h4 {
   /* CARDS */
 
   .filters {
-    width: 70%;
-    margin: 0 auto;
     padding-bottom: 5%;
+    text-align: center;
   }
 
   .card-container, .form-container {
     display: grid;
     gap: 50px;
-    grid-template-columns: auto auto;
-    width: 70%;
+    grid-template-columns: auto auto auto;
+    width: 90%;
     margin: 0 auto;
   }
 
@@ -138,6 +142,14 @@ h4 {
     background-color: #F1EEEE;
   }
 
+  .card p {
+    margin: 25px 0;
+  }
+
+  .card_rating_text {
+    text-align: center;
+    color: #3ac162;
+  }
 
 /* 
   #card_user label, #card_user input, #card_user textarea, #card_user button {
@@ -159,7 +171,18 @@ select {
   background-color: #fff;
   color: #8a97a0;
   box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
-  margin-bottom: 30px;
+  margin-bottom: 25px;
+  border-radius: 7px;
+}
+
+#form_starring {
+  margin-bottom: 0;
+}
+
+#submit_form p {
+  margin: 6px 0 20px 10px;
+  /* margin-top: 8px;
+  margin-bottom: 20px; */
 }
 
 fieldset {
