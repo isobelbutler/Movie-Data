@@ -73,27 +73,6 @@ for (let i = 0; i < Object.keys(movieData).length; i++) {
 
 document.querySelector('.card-container').insertAdjacentHTML('beforeend', html); 
 
-// 2. ADDS AN ACCURATE DATE
-
-  const date = new Date();
-
-  let day = date.getDate();
-  let month = date.getMonth() + 1; // You need + 1 as month is seen as 0-11.
-  let year = date.getFullYear();
-  let headingDate = `${day} / ${month} / ${year}`;
-
-  // This adds a 0 prefix if day/month is a single digit - Aesthetic Only
-  if ( day <= 9 & month >= 10) {
-    headingDate = `0${day} / ${month} / ${year}`;
-  }  else if ( day >= 10 & month <= 9 ) {
-    headingDate = `${day} / 0${month} / ${year}`;
-  }  else if ( day <= 9 & month <= 9) {
-    headingDate = `0${day} / 0${month} / ${year}`;
-  }  
-
-  document.getElementById("clock").innerHTML = headingDate.toLocaleString();
-
-
 // 3. TOGGLES DISPLAYED INFO USING CHECKBOXES
 
 function toggleRating(obj) {
@@ -231,7 +210,7 @@ if ( userTitle.value == '' || userRating.value == '' || userSummary.value == '' 
 
 const container = document.querySelector('.card-container');
 
-document.querySelector('.card-container').insertAdjacentHTML('afterbegin', extraHtml); 
+document.querySelector('.card-container').insertAdjacentHTML('beforeend', extraHtml); 
 // container.insertBefore(container.lastChild, extraHtml); 
 
 
