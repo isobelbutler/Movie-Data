@@ -20,12 +20,14 @@ This project was the one I found the most difficult, but was also extremely rewa
 2. Create a loop that would run through the object, and render the information onto the website.
 3. Add a way for the user to filter the displayed information by category.
 4. Create a form that allow users to submit and display their own film.
-5.  
+5. Change layout to remove title to make for a cleaner design.
+6. Add fixed header and move filters into this.
 
 ## Debugging
 
-### Issue: I couldn't work out how to access the titles, or the data within them.
+### Issue: I couldn't work out how to access the object film titles, or the data within them.
 
+As part of the course I've been doing to learn JavaScript I had come across objects and how to access them, but they were laid out differently, with just one set of key:value pairs. At first I worked out how to access each of the films values, but not the actual title, until I realied that the title was a key! Once I had realised that, it all began making sense.
 
 **Solution:**  
 ```javascript
@@ -55,12 +57,17 @@ document.querySelector('.card-container').insertAdjacentHTML('beforeend', html);
 
 ### Issue: I could access the data of the title the user added, but not the title itself.
 
+I had worked out how to access the titles in the object, but couldn't work out how to access the title that the user submitted. Everything I had been doing before had been dot notation, rather than using square brackets. Figuring this out was very satisfying!
+
 **Solution**
 ```javascript
+let userTitle = document.getElementById('form_title');
 movieData[userTitle.value] = userMovie; //Breakthrough!! using [] means you can access the .value rather than using dot notation
 ```
 
 ### Issue: I could access the data the user added to the object in the console, but couldn't work out how to render it onto the page.
+
+I didn't know how to add the user's film to the actual website, and spent a while pondering whether there was the equivalent of the CSS pseudo class *:last-child*, or whether it was something I could do through the index number. I research and found out about the *.pop()* method which solved the problem.
 
 **Solution**
 ```javascript
@@ -72,7 +79,7 @@ let userInfo = Object.values(movieData).pop();
 
 **Solution:**  
 
-I realised that the tiny culprit was staring me right in the face! I had thought it might be due to using a let variable, but that didn't make sense, and then eventually clocked I was adding extra to the existing HTML each time rather than changing it! I had used the code that worked in the loop, forgetting I was no longer was looping!
+I realised that the tiny culprit was staring me right in the face! I had thought it might be due to using a let variable, but that didn't make sense, and then eventually clocked I was adding extra to the existing HTML each time rather than changing it! I had used the code that worked in the loop, forgetting I was no longer looping!
 
 Before:
 ```javascript
