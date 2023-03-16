@@ -16,12 +16,15 @@
   </head>
 
   <header>
+    <!-- Navbar -->
     <nav>
       <ul class="nav-container">
         <li><p>The Review: Data Edition</p></li>
         <li><a href="https://isobelbutler.github.io/Website/">&#8618; Back to Website</a></li>
       </ul>
     </nav>
+
+    <!-- Filters -->
     <form class="filters">
           <label>Toggle displayed info:</label>
           <input type="checkbox" id="check_rating" name="check_rating" checked onclick="toggleRating(this)">
@@ -45,60 +48,29 @@
 
   <body>
     <main>
-
-      <!-- <section>
-        <h2><span class="highlight">Home > Film/Television > Reviews</span></h2>
-        <h1>This Week's Films Under the Spotlight</h1>
-        <h3>Author: Isobel Butler</h3>
-        <h3>Published: <span id="clock">Current Date</span></h3>
-      </section> -->
-
       <section>
-  
-        
-       
+
+        <!-- Cards -->
         <div class="card-container">
+          
           <!-- JAVASCRIPT GENERATES CARDS HERE  -->
           
+          <!-- User Form -->
           <div class="card" id="card_user">
             <form action="" method="" id="submit_form">
-              <!-- <fieldset> -->
                 <legend>Want to have your say?</legend>
-                  <!-- <label for="form_title">Film title:</label> -->
                   <input type="text" id="form_title" name="form_title" placeholder="Film Title">
-
-                  <!-- <label for="form_title">Rating:</label> -->
                   <input type="number" id="form_rating" name="form_rating" min="1" max="10" placeholder="Rating / 10" step="0.1">
-
-                  <!-- <label for="form_summary">Summary:</label>   -->
                   <textarea id="form_summary" name="user_summary" placeholder="Summary"></textarea>
-
-                  <!-- <label for="form_starring">Starring:</label> -->
                   <input type="text" id="form_starring" name="form_starring" placeholder="Starring: Brad P, Angelina J">
                   <p><i>Seperate each actor with a comma then a space.</i></p>
-
-                  <!-- <label for="form_airdate">Year aired:</label> -->
                   <input type="number" id="form_airdate" name="form_airdate" min="1900" max="2030" step="1" placeholder="Year Aired"/>
-
-                  <!-- <label for="form_runtime">Runtime (minutes):</label> -->
                   <input type="number" id="form_runtime" name="form_runtime" min="1" max="400" step="1" placeholder="Runtime (minutes)"/>
-
-                  <!-- <label for="form_image">Upload an image:</label>
-                  <input type="file" id="form_image" name="form_image" accept="image/*"> -->
-              <!-- </fieldset> -->
                 <button type="submit">Submit Film</button>
-             
-             
             </form>
           </div>
         </div>
-
-        <div class="form-container">
-          
-        </div>
-
       </section>
-
     </main>
     <script src="js/script.js"></script>
   </body>
