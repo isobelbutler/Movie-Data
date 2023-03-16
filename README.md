@@ -14,12 +14,12 @@ As with my other projects, I planned how the design of the project would look on
 ![Original Website design](images/figma_design.png)
 
 ## Building
-This project was the one I found the most difficult, but was also extremely rewarding, I learnt alot through making it, and really enjoyed the challenges and satisfaction of finally feeling like it made sense.
+This project was the one I found the most difficult, but was also extremely rewarding, I learnt a lot through making it, and really enjoyed the challenges and satisfaction of finally feeling like it made sense.
 
-1. Recreate the figma design using HTML and CSS, with dummy cards mimicking what the JS would create, so that I could get the styling done first.
-2. Create a loop that would run through the object, and render the information onto the website.
+1. Recreate the Figma design using HTML and CSS, with dummy cards mimicking what the JS would create, so that I could get the styling done first.
+2. Create a loop that would run through the object and render the information onto the website.
 3. Add a way for the user to filter the displayed information by category.
-4. Create a form that allow users to submit and display their own film.
+4. Create a form that allows users to submit and display their own film.
 5. Change layout to remove title to make for a cleaner design.
 6. Add fixed header and move filters into this.
 
@@ -27,7 +27,7 @@ This project was the one I found the most difficult, but was also extremely rewa
 
 ### Issue: I couldn't work out how to access the object film titles, or the data within them.
 
-As part of the course I've been doing to learn JavaScript I had come across objects and how to access them, but they were laid out differently, with just one set of key:value pairs. At first I worked out how to access each of the films values, but not the actual title, until I realied that the title was a key! Once I had realised that, it all began making sense.
+As part of the course I've been doing to learn JavaScript I had come across objects and how to access them, but they were laid out differently, with just one set of key:value pairs. At first I worked out how to access each of the films values, but not the actual title - until I realied that the title was a key! Once I had realised that it all began making sense.
 
 **Solution:**  
 ```javascript
@@ -57,7 +57,7 @@ document.querySelector('.card-container').insertAdjacentHTML('beforeend', html);
 
 ### Issue: I could access the data of the title the user added, but not the title itself.
 
-I had worked out how to access the titles in the object, but couldn't work out how to access the title that the user submitted. Everything I had been doing before had been dot notation, rather than using square brackets. Figuring this out was very satisfying!
+I had worked out how to access the titles in the object but couldn't work out how to access the title that the user submitted. Everything I had been doing before had been dot notation, rather than using square brackets. Figuring this out was very satisfying!
 
 **Solution**
 ```javascript
