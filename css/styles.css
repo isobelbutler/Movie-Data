@@ -136,6 +136,9 @@ h4 {
   /* CARDS */
 
   .filters {
+    display: flex;
+    justify-content: center;
+    column-gap: 10px;
     padding: 20px 0;
     text-align: center;
     background-color: #EEF3F2;
@@ -237,13 +240,23 @@ button {
 
 
   /* Media Queries */
+
+  @media screen and (max-width: 550px) {
+ 
+    section:first-child {
+    padding: 400px 2%;
+  }
+
+  .filters {
+    flex-wrap: wrap;
+    flex-direction: column;
+  }
+
+  }
+
   @media screen and (max-width: 849px) {
     .card-container {
      grid-template-columns: auto;   }
-
-    section:first-child {
-    padding: 350px 2%;
-  }
   }
 
   
@@ -256,4 +269,3 @@ button {
     }
   }
 
- 

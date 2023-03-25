@@ -27,21 +27,25 @@
     <!-- Filters -->
     <form class="filters">
           <label>Toggle displayed info:</label>
-          <input type="checkbox" id="check_rating" name="check_rating" checked onclick="toggleRating(this)">
+          <div><input type="checkbox" id="check_rating" name="check_rating" checked onclick="toggleRating(this)">
           <label for="check_rating">Rating</label>
-
+          </div>
+          <div>
           <input type="checkbox" id="check_summary" name="check_summary" checked onclick="toggleSummary(this)">
           <label for="check_summary">Summary</label>
-
+          </div> 
+          <div> 
           <input type="checkbox" id="check_starring" name="check_starring" checked onclick="toggleStarring(this)">
           <label for="check_starring">Starring</label>
-
+        </div>
+        <div>
           <input type="checkbox" id="check_airdate" name="check_airdate" checked onclick="toggleAired(this)">
           <label for="check_airdate">Airdate</label>
-
+        </div>
+        <div>
           <input type="checkbox" id="check_runtime" name="check_runtime" checked onclick="toggleRuntime(this)">
           <label for="check_runtime">Runtime</label>
-
+        </div>
         </form>
   </header>
 
