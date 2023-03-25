@@ -239,9 +239,14 @@ button {
   /* Media Queries */
   @media screen and (max-width: 849px) {
     .card-container {
-     
-grid-template-columns: auto;   }
+     grid-template-columns: auto;   }
+
+    section:first-child {
+    padding: 350px 2%;
   }
+  }
+
+  
 
   @media screen and (max-width: 1200px) and (min-width: 850px) {
     .card-container {
